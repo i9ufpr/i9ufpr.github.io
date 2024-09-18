@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://ap-leo.github.io/pitch24k/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+<style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+.borda, .borda2, .borda3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    box-sizing: border-box;
+    background-color: #353535;
+    border-radius: 17px 0px 17px 0px;
+}
+
+.borda3{
+    width: 50%;
+}
+
+
+.borda2{
+    border-radius: 17px;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: start;
+    justify-content: space-between;
+    padding: 3%;
+    background-image: url('fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.logo{
+    color: #D9D9D9;
+    font-family: 'Montserrat';
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.logo2{
+    color: #058BA2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4em;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 82.331%;
+}
+
+.logo3{
+    color: #D2D2D2;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.nome, .nome2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    border-radius: 30px;
+    border: 1px solid #FFF;
+    background: rgba(165, 165, 165, 0.30);
+    box-shadow: 4px 4px 17.9px 0px rgba(0, 0, 0, 0.04);
+}
+
+.primeiro{
+    display: flex;
+    flex-direction: column;
+}
+
+.nome{
+    height: 30%;
+}
+
+.nome2{
+    height: 60%;
+    justify-content: end;
+
+}
+
+.bateria{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3297A9;
+
+/* 
+    (cinza)#767A7B
+(laranja) 
+(azul)  */
+
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    height: 90%;   
+    width: 100%;
+    filter: blur(8px);
+    transition: 1s ease;
+    overflow: hidden;
+}
+
+.nome2:hover .bateria {
+    filter: blur(8px) brightness(130%);
+
+}
+
+.cima{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 25%;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-family: 'Montserrat';
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+.dives{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video{
+    display: flex;
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 17px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 75%;
+    height: 100%;
+    padding: 2%;
+    padding-bottom: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    clip-path: url('corte1.svg');
+}
+
+.grade{
+    width: 75%;
+    height: 100%;
+    padding: 2%;
+    padding-bottom: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    border-radius: 17px;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; 
+    transition: 1s filter;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.grade :hover{
+    transform: scale(1.1);
+}
+
+.voltar{
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 8%;
+    right: 1%;
+    z-index: 2;
+    height: 10%;
+    border-radius: 50%;
+    width: 5%;
+    background-color: #058BA2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+#video, #grade {
+    transition: opacity 1s ease-in-out;
+}
+
+#video.fade-out {
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 0%);
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.video video {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.7);
+    transition: 1s filter;
+    clip-path: url(#myClipPath); /* Aplica o SVG de recorte */
+}
+.video{
+    color: white;
+}
+
+.top{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: top;
+    width: 100%;
+    z-index: 1;
+}
+
+.redes{
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 70%;
+}
+
+.redes img{
+    cursor: pointer;
+}
+
+.redes .img1:hover {
+    
+}
+
+.redes .img2:hover {
+}
+
+
+.empresas{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 30%;
+    overflow-x: auto; /* rolagem horizontal */
+    white-space: nowrap;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 33px;
+    overflow-y: hidden;
+}
+
+
+.scrolling-wrapper {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 5%;
+    scrollbar-width: none;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.scrolling-wrapper img {
+    flex: 0 0 33.33%; /* cada imagem ocupa um terço da largura do contêiner */
+}
+
+/* Estilo para as setas */
+.setap {
+    cursor: pointer;
+    user-select: none;
+    width: 2%; /* Ajuste conforme necessário */
+    display: flex;    
+}
+
+.setap{
+    filter: grayscale(100%) brightness(0%);
+}
+
+.setap1{
+    transform: scale(-1);
+}
+
+.empresas img{
+    width: 20%;
+    height: 100%;
+}
+
+.middle{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex: row;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15%;
+    height: 90%;
+    padding-right: 3%;
+}
+
+.card1, .card2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45%;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid #FFF;
+    background: linear-gradient(103deg, rgba(210, 210, 210, 0.35) -20.67%, rgba(217, 217, 217, 0.03) 117.08%);
+    box-shadow: 4px 4px 17.9px 0px rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(18px);
+    color: #F1EFE7;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.sobre{
+    opacity: 0;
+    width: 60%;
+    color: #FFF;
+    font-family: 'Montserrat';
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: justify;
+    transition: 1s ease;
+}
+
+.down{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.data{
+    color: #FFF;
+    font-family: 'Orbitron';
+    font-size: 4vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.where{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.inscricao{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    justify-content: space-around;
+    align-items: center;
+    border: 0;
+    border-radius: 17px;
+    transition: 0.3s background-color, 0.3s color;
+    cursor: pointer;
+    color: #000;
+
+}
+
+.inscricao:hover{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+.botaotexto{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+
+.botaotexto text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.seta{
+    background-color: black;
+    border-radius: 15px;
+    width: 15%;
+}
+
+
+@media (max-width: 720px) {
+    .conteudo{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .infos {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%; 
+        height: 30%;
+    }
+
+    .nome, .nome2{
+        width: 45%;
+        height: 90%;
+    }
+
+    .primeiro{
+        font-size: 0.7em;
+    }
+
+    .video{
+        width: 100%;
+        height: 100%;
+    }
+
+    .cards{
+        width: 25%;
+        height: 100%;
+    }
+    
+    .card1, .card2{
+        height: 45%;
+        width: 100%;
+        font-size: 1.1em;
+    }
+
+    .dives{
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .middle{
+        height: 50%;
+        width: 100%;
+    }
+
+    .sobre{
+        font-size: 0.8em;
+    }
+
+    
+    .where{
+        width: 20%;
+        height: 100%;
+        padding: 2%;
+    }
+
+    .where img{
+        height: 80%;
+    }
+    
+    .inscricao{
+        width: 100%;
+        height: 100%;
+        padding: 2%;
+    }
+    
+    .botaotexto{
+        width: 80%;
+        height: 100%;
+    }
+    
+    .botaotexto text{
+        font-size: 2.7vw;
+    }
+    
+    .seta{
+        width: 15%;
+    }
+
+    .cima{
+        height: 20%;
+        top: 4%;
+        right: 12vw;
+        z-index: 5;
+        font-size: 1em;
+        line-height: normal;
+    }
+}
+
+
+.gridimagens{
+    width: 100%;
+
+    
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+.linha{
+    
+    display: flex;
+    padding: 20px;
+    width: 100%;
+     margin: 0 auto;
+     text-align: center;
+
+     
+    
+}
+.linha .imagem{
+    width: 20%;
+
+    text-align: center;
+    margin: 0 auto;
+}
+.linha .imagem img{
+   width: 70px;
+
+    text-align: center;
+    margin: 0 auto;
+}
+
+.bgL{
+      display: none;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.753); /* Fundo escuro semi-transparente */
+         justify-content: center;
+         align-items: center;
+         z-index: 100;
+}
+.bgconteudo{
+         width: 450px;
+         height: 100%;
+         max-height: 380px;
+         
+         margin: 50px auto;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+       
+}
+.entenda{
+    margin-top: 20px;
+    width: 200px;
+    font-size: 20px;
+text-align: center;
+cursor: pointer;
+    background-color: #f39939be;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.entenda:hover{
+
+    background-color: #eeb87ff8;
+  
+}
+.Total{
+    background-color: #3297A9;
+    padding: 20px;
+    border-radius: 20px;
+    
+    margin: 0 auto;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;    font-style: normal;
+    font-weight: 900;
+    line-height: 82.331%;
+    margin-bottom: 30px;
+}
+.itemdesc{
+    text-align: center;
+    margin: 0 auto;
+}
+.itemdesc img{
+    width: 280px
+    
+    }
+
+    .setanova{
+        width: 50px;
+        height: 50px;
+        background-color: rgba(148, 131, 131, 0.363);
+        border-radius: 200px;
+        position: relative; 
+        left: 90%;
+        top: 200px;
+        cursor: pointer;
+    }
+
+    .setanova p{position: relative;
+        left: 20px;
+        color: white;
+        top: 20px;
+        font-family: 'Montserrat', sans-serif;    font-style: normal;
+    font-weight: 900;
+    line-height: 82.331%;
+    margin-bottom: 30px;
+    }
+</style>
+
+
+</head>
+
+<body class="vsc-initialized">
+
+    <div id="maisinfos" class="bgL" onclick="esconderDiv()">
+  
+        <div class="bgconteudo" onclick="event.stopPropagation()">
+     
+            <div class="setanova" onclick="prox()">
+                <p> > </p>   
+            </div>
+            
+            <div class="itemdesc" id="item1">
+                <p class="Total">O que é o PITCH DAY?</p>    
+                <img src="./Imagens/img11.png" alt="PITCH DAY">
+            </div>   
+            
+            <div class="itemdesc" id="item2" style="display: none;">
+                <p class="Total">Inovação</p>    
+                <img src="./Imagens/img22.png" alt="Inovação">
+            </div>   
+            
+            <div class="itemdesc" id="item3" style="display: none;">
+                <p class="Total">Save the Date</p>    
+                <img src="./Imagens/img33.png" alt="Save the Date">
+            </div>
+
+            <div class="itemdesc" id="item4" style="display: none;">
+                <p class="Total">Descrição</p>    
+                <img src="./Imagens/img44.png" alt="Save the Date">
+            </div>
+            
+
+            
+        </div>
+     </div>
+     
+
+    <div class="conteudo">
+        <div class="infos">
+            <div class="nome">
+                <div class="primeiro">
+                    <text class="logo">7°edição</text>
+                    <text class="logo2">PITCH<br>DAY</text>
+                    <text class="logo3">UFPR</text>
+                </div>
+            </div>
+            <div class="nome2">
+                <div class="bateria" id="bateria" style="height: 95%;">
+                    <div class="nomeaux">
+                        
+                    </div>
+                </div>
+                <div class="cima">
+                    <text id="dias">Faltam 5 dias</text>
+                    <img src="./Imagens/Charging Battery.png">
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="video fade-out" id="video" style="display: flex; opacity: 1;"><div class="vsc-controller"><template shadowrootmode="open">
+        <style>
+          @import "chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/shadow.css";
+        </style>
+
+        <div id="controller" style="top:0px; left:0px; opacity:0.9">
+          <span data-action="drag" class="draggable">1.00</span>
+          <span id="controls">
+            <button data-action="rewind" class="rw">«</button>
+            <button data-action="slower">−</button>
+            <button data-action="faster">+</button>
+            <button data-action="advance" class="rw">»</button>
+            <button data-action="display" class="hideButton">×</button>
+          </span>
+        </div>
+      </template></div>
+            
+            <video autoplay="" muted="" loop="" id="background-video" style="filter: brightness(0.7);">
+                <source src="kakaka.mp4" type="video/mp4">
+            </video>
+            <div class="dives">
+
+                <div class="top">
+                    <div class="redes">
+                        <img class="borda2 img1" src="./Imagens/Instagram.png">
+                        <img class="borda2 img2" src="./Imagens/LinkedIn.png">
+                    </div>
+
+
+                    <div class="empresas borda2">
+                        <img class="setap setap1" src="./Imagens/seta.png" alt="Seta Esquerda">
+                        <div class="scrolling-wrapper">
+                            <img src="./Imagens/instaufpr 2.png" alt="Logo">
+                            <img src="./Imagens/instaufpr 2.png" alt="Logo">
+                            <img src="./Imagens/instaufpr 2.png" alt="Logo">
+                            <img src="./Imagens/instaufpr 2.png" alt="Logo">
+                            <img src="./Imagens/instaufpr 2.png" alt="Logo">
+                        </div>
+                        <img class="setap setap2" src="./Imagens/seta.png" alt="Seta Direita">
+                    </div>
+
+
+
+                </div>
+
+                <div class="middle">
+                    <div class="sobre" id="sobre" style="opacity: 0;">
+                        <text>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</text>
+
+                            <div class="entenda" onclick="abrirmodal()">ENTENDA TUDO!</div>
+                    </div>
+                    <div class="cards">
+                        <div class="card1" id="botaoSobre">
+                            <text>SOBRE O<br>PITCHDAY<br>UFPR</text>
+                        </div>
+                        <div class="card2" id="passada">
+                            <text>EDIÇÕES<br>PASSADAS</text>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="down">
+                    <div class="where">
+                        <text class="data">09/11</text>
+                        <img src="./Imagens/bode.png">
+                    </div>
+
+                    <div class="borda3">
+                        <button class="inscricao">
+                            <div class="seta">
+                                <img src="./Imagens/seta.png">
+                            </div>
+                            <div class="botaotexto">
+                                <text>INSCREVA SUA EQUIPE</text>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="voltar" id="voltar" style="display: none;">
+            <img src="./Imagens/seta.png">
+        </div>
+
+
+        <div class="grade" id="grade"> 
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+        </div>
+
+
+
+            <!-- <div class="gridimagens" id="grade" style="display: none;">
+
+                <div class="linha">
+                    <div class="imagem">
+                    <img src="./Imagens/i.png">
+                </div>
+                <div class="imagem">
+                    <img src="./Imagens/i.png">
+                </div>
+                <div class="imagem">
+                    <img src="./Imagens/i.png">
+                </div>
+
+                </div>
+                <div class="linha">
+                    <div class="imagem">
+                        <img src="./Imagens/i.png">
+                    </div>
+                    <div class="imagem">
+                        <img src="./Imagens/i.png">
+                    </div>
+                    <div class="imagem">
+                        <img src="./Imagens/i.png">
+                    </div>
+                </div>
+                <div class="linha">
+                    <div class="imagem">
+                        <img src="./Imagens/i.png">
+                    </div>
+                    <div class="imagem">
+                        <img src="./Imagens/i.png">
+                    </div>
+                    <div class="imagem">
+                        <img src="./Imagens/i.png">
+                    </div>
+                </div>
+
+            </div> -->
+            
+
+
+        </div>
+
+
+    </div>
+
+    <script>
+
+
+
+function abrirmodal(){
+    const maisinfos = document.getElementById('maisinfos');
+    maisinfos.style.display = 'initial'
+    
+}
+function esconderDiv(event) {
+            // Oculta a div "maisinfos" apenas se o clique for na div "bgL"
+            var div = document.getElementById('maisinfos');
+            div.style.display = 'none';
+        }
+let total = 0;
+
+function prox() {
+    // Array com o total de slides, atualiza o valor de total de acordo com a navegação
+    const totalSlides = 4;
+    
+    // Incrementa o total e volta para o início se exceder o número de slides
+    total = (total + 1) % totalSlides;
+
+    // Loop para ocultar todos os slides e exibir apenas o atual
+    for (let i = 0; i < totalSlides; i++) {
+        const item = document.getElementById(`item${i + 1}`);
+        if (i === total) {
+            item.style.display = 'block';  // Mostra o slide atual
+        } else {
+            item.style.display = 'none';   // Esconde os outros slides
+        }
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const botaoSobre = document.getElementById("botaoSobre");
+    const sobre = document.getElementById('sobre');
+    const video = document.getElementById('background-video');
+
+    aux = 0;
+    botaoSobre.addEventListener('click', () => {
+
+
+
+        if (aux == 0){
+            sobre.style.opacity = '1';
+            video.style.filter = 'brightness(0.2)';
+            aux = !aux;
+            return;
+        }
+        sobre.style.opacity = '0';
+        video.style.filter = 'brightness(0.7)';
+        aux = !aux;
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollingWrapper = document.querySelector('.scrolling-wrapper');
+    const setaEsquerda = document.querySelector('.setap1');
+    const setaDireita = document.querySelector('.setap2');
+
+    const imgWidth = scrollingWrapper.querySelector('img').offsetWidth;
+    const margin = parseInt(window.getComputedStyle(scrollingWrapper.querySelector('img')).marginRight);
+
+    const scrollAmount = imgWidth + margin; // rolagem para uma imagem
+
+    setaEsquerda.addEventListener('click', () => {
+        scrollingWrapper.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    setaDireita.addEventListener('click', () => {
+        scrollingWrapper.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+function calcularDiasFaltando(dataFutura) {
+    // Cria um objeto Date para a data futura
+    const dataFuturaObj = new Date(dataFutura);
+
+    // Cria um objeto Date para a data atual
+    const hoje = new Date();
+
+    // Calcula a diferença em milissegundos
+    const diferencaMs = dataFuturaObj - hoje;
+
+    // Converte a diferença de milissegundos para dias
+    const umDiaMs = 24 * 60 * 60 * 1000;
+    const diasFaltando = Math.ceil(diferencaMs / umDiaMs);
+
+    return diasFaltando;
+}
+
+const dataFutura = '2024-09-11';
+var aux = calcularDiasFaltando(dataFutura)
+const dias = 100 - aux;
+var bat = document.getElementById('bateria');
+
+bateria.style.height = dias + '%';
+
+const dia = document.getElementById('dias');
+dia.textContent = 'Faltam ' + aux + ' dias';
+
+const passada = document.getElementById('passada')
+const video = document.getElementById('video')
+const grade = document.getElementById('grade')
+const fotos = document.querySelector('.grid-item');
+const voltar = document.getElementById('voltar')
+
+
+
+
+
+
+passada.addEventListener('click', function(){
+
+    var aux = 1;
+var local = 'p';
+const gridItems = document.querySelectorAll('.grid-item');
+
+gridItems.forEach((item, index) => {
+    item.style.backgroundImage = `url('${local}${aux}.jpeg')`;
+    item.style.backgroundSize = 'cover';
+    item.style.backgroundPosition = 'center';
+    aux++;
+});
+
+
+
+
+    video.classList.add('fade-out');
+    setTimeout(function() {
+        video.style.display = 'none';
+        grade.style.display = 'grid';
+        voltar.style.display = 'flex';
+    }, 1000); 
+})
+
+
+
+
+voltar.addEventListener('click', function(){
+    location.reload()
+    grade.style.opacity = '0';
+    setTimeout(function() {
+        grade.style.display = 'none';
+        video.style.display = 'flex';
+        voltar.style.display = 'none';
+        video.style.opacity = 1;
+    }, 1000); 
+})
+
+    </script>
+
+
+</body></html>
