@@ -975,7 +975,7 @@ Media Queries
     padding: 0 1em;
     width: 30%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  animation: moveUpDown 1.5s ease-in-out infinite;
+  animation: moveUpDown 1s ease-in-out infinite;
   }
   
   .features .col-3:last-of-type {
@@ -1195,7 +1195,7 @@ Media Queries
                             <div class="seta">
                                 <img src="seta.png">
                             </div>
-                            <div class="botaotexto">
+                            <div class="botaotexto" onclick="redirecio()">
                                 <text>INSCREVA SUA EQUIPE</text>
                             </div>
                         </button>
@@ -1382,6 +1382,10 @@ function abrirmodal(){
     const maisinfos = document.getElementById('maisinfos');
     maisinfos.style.display = 'initial'
     
+}
+function redirecio(){
+    window.location.href = "https://forms.microsoft.com/r/N53WajSj5m";
+
 }
 function esconderDiv(event) {
             // Oculta a div "maisinfos" apenas se o clique for na div "bgL"
