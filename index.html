@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>I9UFPR</title>
 
 
 
@@ -661,7 +661,7 @@ cursor: pointer;
     margin: 0 auto;
 }
 .itemdesc img{
-    width: 280px
+    width: 380px
     
     }
 
@@ -974,6 +974,8 @@ Media Queries
     margin: 2em 5% 0 0;
     padding: 0 1em;
     width: 30%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  animation: moveUpDown 2s ease-in-out infinite;
   }
   
   .features .col-3:last-of-type {
@@ -1014,6 +1016,25 @@ Media Queries
   }
   
 }
+
+
+
+
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
 </style>
 
 
@@ -1050,12 +1071,9 @@ Media Queries
                 <img src="img22.png" alt="Inovação">
             </div>   
             
-            <div class="itemdesc" id="item3" style="display: none;">
-                <p class="Total">Save the Date</p>    
-                <img src="img33.png" alt="Save the Date">
-            </div>
+         
 
-            <div class="itemdesc" id="item4" style="display: none;">
+            <div class="itemdesc" id="item3" style="display: none;">
                 <p class="Total">Descrição</p>    
                 <img src="img44.png" alt="Save the Date">
             </div>
@@ -1279,17 +1297,17 @@ Media Queries
       
       <div class="col-3">
         <img src="pit.webp" alt="">
-        <h3>Cloud Computing</h3>
+        <h3>Pitch Day</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda modi maiores eum commodi soluta, blanditiis voluptates ea eos, cim! Neque.</p>
       </div>
       <div class="col-3">
         <img src="start.webp" alt="">
-        <h3>Expert Coding</h3>
+        <h3>Iniciativa Startup Experience</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda modi maiores eum commodi soluta, blanditiis voluptates ea eos, cim! Neque.</p>
       </div>
       <div class="col-3">
         <img src="cpt.webp" alt="">
-        <h3>Data Analysis</h3>
+        <h3>CPT</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda modi maiores eum commodi soluta, blanditiis voluptates ea eos, cim! Neque.</p>
       </div>
     </div>
@@ -1330,6 +1348,25 @@ Media Queries
   </div>
 
 
+
+
+
+  <footer class="container-fluid footer">
+    <div style="width: 100%; color: white; font-size: 15px; text-align: left; padding: 20px;">
+        <p>Projeto</p>
+
+        <p>Redes sociais</p>
+
+        <p>UFPR</p>
+      <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
+      <a href="#" target="_blank"><i class="fa fa-codepen"></i></a>
+    </div>
+  </footer>
+
+
     </div>
 
 
@@ -1355,7 +1392,7 @@ let total = 0;
 
 function prox() {
     // Array com o total de slides, atualiza o valor de total de acordo com a navegação
-    const totalSlides = 4;
+    const totalSlides = 3;
     
     // Incrementa o total e volta para o início se exceder o número de slides
     total = (total + 1) % totalSlides;
@@ -1490,6 +1527,11 @@ voltar.addEventListener('click', function(){
 })
 
     </script>
+
+
+
+
+
 
 
 </body>
