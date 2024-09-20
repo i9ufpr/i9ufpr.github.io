@@ -14,6 +14,7 @@
 html, body {
     height: 100%;
     padding: 0;
+    overflow-x: hidden;
     margin: 0;
 }
 
@@ -123,9 +124,10 @@ html, body {
     background-color: #3297A9;
 
 /* 
-    (cinza)#767A7B
-(laranja) 
-(azul)  */
+(cinza)#767A7B
+(laranja) #F39939
+(azul) #3297A9
+ */
 
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px; 
@@ -144,7 +146,8 @@ html, body {
 .cima{
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: relative;
+
     bottom: 25%;
     align-items: center;
     justify-content: center;
@@ -682,12 +685,352 @@ cursor: pointer;
     line-height: 82.331%;
     margin-bottom: 30px;
     }
+    .containerconteudo{
+        width: 100%;
+        background-color: red;
+        height: 100px;
+        font-family: Roboto, sans-serif;
+
+
+
+        color: #444;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .containerconteudo  .container-fluid {
+  padding: 0 1em;
+}
+
+.containerconteudo .container {
+  margin: 0 auto;
+  max-width: 996px;
+}
+
+/* ========================
+Navigation
+======================== */
+
+@keyframes show-header {
+    0% {
+        top: -4em;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+
+.containerconteudo h1, h2, h3, h4, h5, h6, ul, ol, p {
+  margin-top: 0;
+}
+
+.containerconteudo h1 {
+  font-weight: 900;
+}
+
+.containerconteudo p {
+  line-height: 1.5;
+}
+
+.containerconteudo a, a:hover, a:focus, a:active, a:visited {
+  color: #170d77;
+  text-decoration: underline;
+}
+
+
+/* ========================
+Sections
+======================== */
+
+ .splash {
+  background: linear-gradient(rgba(44, 62, 80, 0.65), rgba(52, 152, 219, 0.65)),
+				url("https://images.unsplash.com/photo-1452796907770-ad6cd374b12d?crop=entropy&fit=crop&fm=jpg&h=1000&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925") no-repeat fixed center;
+	background-size: cover;
+	color: #fff;
+}
+
+ .splash .container {
+  padding-top: 25vh; /* No JS fallback*/
+  padding-bottom: 25vh; /* No JS fallback*/
+}
+
+ .profile-image {
+  border-radius: 50%;
+  display: block;
+  max-width: 200px;
+  margin: 0 auto 1em;
+  width: 100%;
+}
+
+ .splash h1 {
+  font-size: 3em;
+  margin-bottom: .15em;
+  text-align: center;
+}
+
+ .splash .lead, .splash .continue {
+  display: block;
+  text-align: center;
+}
+
+ .splash .lead {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-bottom: 1em;
+}
+
+ .splash .continue {
+  font-size: 4em;
+}
+
+ .splash .continue a {
+  border: 4px solid #fff;
+  border-radius: 100%;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  width: 80px;
+}
+ .splash .continue a:hover {
+  background-color: rgba(255, 255, 255, .25);
+}
+
+ .intro .container, .features .container, .portfolio .container, .contact .container {
+  padding: 5em 0;
+}
+
+ .intro, .features, .portfolio, .contact {
+  text-align: center;
+}
+
+ .intro {
+    background: rgb(243,246,244);
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.916) 9%, #d37d21 52%, #F39939 75%);
+  color: #fff;
+}
+
+ .intro a, .intro a:hover, .intro a:focus, .intro a:active, .intro a:visited {
+  color: #fff;
+}
+
+ .features img {
+  display: block;
+  margin: 0 auto 1em;
+  max-width: 200px;
+}
+
+ .features .col-3 {
+  margin: 3em auto;
+  width: 100%;
+}
+
+ .portfolio {
+    background: rgb(243,246,244);
+    background: linear-gradient(360deg, rgba(243,246,244,0.9164040616246498) 5%, rgba(41,91,181,0.5998774509803921) 50%, rgba(50,151,169,1) 98%);
+
+color: #fff;
+}
+
+ .gallery .gallery-image {
+  margin: 1em auto;
+  width: 100%;
+}
+
+ .gallery .gallery-image img {
+  background-color: #23648F;
+  border-radius: 4px;
+  display: block;
+  height: auto;
+  padding: 6px;
+  width: 100%;
+}
+
+ .contact form {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  border-top: 8px solid #121975;
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  padding: 1em;
+}
+
+ .contact form input, .contact form textarea {
+  border: none;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+ .contact form textarea {
+  height: 6em;
+}
+
+ .contact form input[type="submit"] {
+  background-color: #130c72;
+  border-radius: 0;
+  color: #fff;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+/* ========================
+Footer
+======================== */
+
+.footer {
+  background-color: #2C3E50;
+  color:  #fff;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.footer .container {
+  padding: 1em 0;
+}
+
+.footer a {
+  color: #fff;
+  margin-right: 1em;
+}
+
+.footer a:last-of-type {
+  margin-right: 0;
+}
+
+/* ========================
+Media Queries
+======================== */
+
+@media (min-width: 768px) {
+  
+  nav .nav-toggle {
+    display: none;
+  }
+  
+  nav ul {
+    border: none;
+    clear: none;
+    display: inline-block !important;
+    float: right;
+    margin: 0;
+    padding: 25px 0;
+  }
+  
+  nav ul li {
+    border: none;
+    display: inline-block;
+    float: left;
+    margin-right: 1.5em;
+  }
+  
+  nav ul li:last-of-type {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    padding: 0;
+  }
+  
+  .splash h1 {
+    font-size: 6em;
+  }
+  
+  .splash .lead {
+    font-size: 3em;
+  }
+  
+  .features .col-3 {
+    float: left;
+    margin: 2em 5% 0 0;
+    padding: 0 1em;
+    width: 30%;
+  }
+  
+  .features .col-3:last-of-type {
+    margin-right: 0;
+  }
+  
+  .gallery .gallery-image {
+    float: left;
+    margin-right: 2.5%;
+    width: 31.6666666667%;
+  }
+  
+  .gallery .gallery-image:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  
+  .contact form {
+    padding: 3em 2em 2em;
+  }
+  
+  .contact form input[type="submit"] {
+    padding: 1em 3em;
+    width: auto;
+  }
+  
+  .contact form input.full-half {
+    float: left;
+    margin-right: 2.5%;
+    width: 48.75%;
+  }
+  
+  .contact form input.full-half:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  
+  .contact form textarea {
+    height: 12em;
+  }
+  
+}
 </style>
 
 
 </head>
 
 <body class="vsc-initialized">
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="maisinfos" class="bgL" onclick="esconderDiv()">
   
@@ -723,6 +1066,12 @@ cursor: pointer;
      </div>
      
 
+
+
+
+
+
+     <div> 
     <div class="conteudo">
         <div class="infos">
             <div class="nome">
@@ -732,7 +1081,7 @@ cursor: pointer;
                     <text class="logo3">UFPR</text>
                 </div>
             </div>
-            <div class="nome2">
+            <div class="nome2" style="position: relative; top: 40px;">
                 <div class="bateria" id="bateria" style="height: 95%;">
                     <div class="nomeaux">
                         
@@ -903,9 +1252,92 @@ cursor: pointer;
 
 
         </div>
+    </div>
+
+
+    <div class="containerconteudo">
+      
+        
+            
+  
+  <div class="container-fluid splash" id="splash">
+    <div class="container">
+      <h1>7 PITCH DAY</h1>
+      <span class="lead">Startup experience</span>
+      <span class="continue"><a href="#about"><i class="fa fa-angle-down"></i></a></span>
+    </div>
+  </div>
+  
+  <div class="container-fluid intro" id="about">
+    <div class="container">
+      <h2>SOBRE O PROJETO</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias ratione impedit soluta amet quas saepe temporibus <a href="#">eum reprehenderit</a> voluptas! A nihil adipisci itaque quos quo dolorum consequuntur iusto facere quaerat, excepturi quod, necessitatibus aliquid quae est qui, aut in assumenda animi tempora debitis. Beatae, veritatis, delectus. Repellat dolore, molestias nam.</p>
+    </div>
+  </div>
+  
+  <div class="container-fluid features" id="skills">
+    <h2>Patrocinadores</h2>
+    <div class="container cf" style="display: flex;">
+      
+      <div class="col-3">
+        <img src="pit.webp" alt="">
+        <h3>Cloud Computing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda modi maiores eum commodi soluta, blanditiis voluptates ea eos, cim! Neque.</p>
+      </div>
+      <div class="col-3">
+        <img src="start.webp" alt="">
+        <h3>Expert Coding</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda modi maiores eum commodi soluta, blanditiis voluptates ea eos, cim! Neque.</p>
+      </div>
+      <div class="col-3">
+        <img src="cpt.webp" alt="">
+        <h3>Data Analysis</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda modi maiores eum commodi soluta, blanditiis voluptates ea eos, cim! Neque.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid portfolio" id="portfolio">
+    <div class="container cf">
+      <h2>Sobre o evento</h2>
+      <div class="gallery">
+
+
+        <div class="gallery-image"><img src="p1.jpeg" alt=""></div>
+        <div class="gallery-image"><img src="p3.jpeg" alt=""></div>
+        <div class="gallery-image"><img src="p3.jpeg" alt=""></div>
+        <div class="gallery-image"><img src="p4.jpeg" alt=""></div>
+        <div class="gallery-image"><img src="p5.jpeg" alt=""></div>
+        <div class="gallery-image"><img src="p6.jpeg" alt=""></div>
+
+
+
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div class="container-fluid contact" id="contact" style="margin-top: 300px;" >
+    <div class="container" >
+      <form style="margin-top: 100px;">
+        <h2>Se interessou? entre em contato com a gente!</h2>
+        <input type="text" placeholder="Name" id="name" name="name" class="full-half">
+        <input type="email" placeholder="Email" id="email" name="email" class="full-half">
+        <input type="text" placeholder="Subject" id="subject" name="subject">
+        <textarea placeholder="Message" id="message" name="message"></textarea>
+        <input type="submit" value="Enviar" style="cursor: pointer;">
+      </form>
+    </div>
+  </div>
 
 
     </div>
+
+
+
+
+
 
     <script>
 
@@ -1025,9 +1457,6 @@ const voltar = document.getElementById('voltar')
 
 
 
-
-
-
 passada.addEventListener('click', function(){
 
     var aux = 1;
@@ -1042,8 +1471,6 @@ gridItems.forEach((item, index) => {
 });
 
 
-
-
     video.classList.add('fade-out');
     setTimeout(function() {
         video.style.display = 'none';
@@ -1051,8 +1478,6 @@ gridItems.forEach((item, index) => {
         voltar.style.display = 'flex';
     }, 1000); 
 })
-
-
 
 
 voltar.addEventListener('click', function(){
@@ -1069,4 +1494,6 @@ voltar.addEventListener('click', function(){
     </script>
 
 
-</body></html>
+</body>
+
+</html>
