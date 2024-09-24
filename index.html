@@ -369,7 +369,7 @@ html, body {
     width: 100%;
     border-radius: 30px;
     border: 1px solid #FFF;
-    background: linear-gradient(103deg, rgba(210, 210, 210, 0.35) -20.67%, rgba(217, 217, 217, 0.03) 117.08%);
+    background: linear-gradient(103deg, rgba(43, 38, 38, 0.35) -20.67%, rgba(119, 118, 118, 0.658) 117.08%);
     box-shadow: 4px 4px 17.9px 0px rgba(0, 0, 0, 0.04);
     backdrop-filter: blur(18px);
     color: #F1EFE7;
@@ -1114,34 +1114,27 @@ Media Queries
 
 
 
-        <div class="video fade-out" id="video" style="display: flex; opacity: 1;"><div class="vsc-controller"><template shadowrootmode="open">
-        <style>
-          @import "chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/shadow.css";
-        </style>
+        <div   class="video fade-out" id="video" style=" display: flex; opacity: 1; background-image: url('tr.png'); background-position: center 50%;">
+            <div class="vsc-controller"><template shadowrootmode="open">
+        
+            
 
-        <div id="controller" style="top:0px; left:0px; opacity:0.9">
-          <span data-action="drag" class="draggable">1.00</span>
-          <span id="controls">
-            <button data-action="rewind" class="rw">«</button>
-            <button data-action="slower">−</button>
-            <button data-action="faster">+</button>
-            <button data-action="advance" class="rw">»</button>
-            <button data-action="display" class="hideButton">×</button>
-          </span>
-        </div>
+     
+
+       
       </template></div>
             
-            <video autoplay="" muted="" loop="" id="background-video" style="filter: brightness(0.7);">
-                <source src="kakaka.mp4" type="video/mp4">
-            </video>
+
+            
+
             <div class="dives">
 
                 <div class="top">
                     <div class="redes">
-                        <img class="borda2 img1" src="Instagram.png">
-                        <img class="borda2 img2" src="LinkedIn.png">
+                        <img class="borda2 img1" src="Instagram.png" onclick="redirecionainsta()">
+                        <img class="borda2 img2" src="LinkedIn.png" onclick='redirecionalkd()'>
                     </div>
-
+                     
 
                     <div class="empresas borda2">
                         <img class="setap setap1" src="seta.png" alt="Seta Esquerda">
@@ -1186,7 +1179,7 @@ Media Queries
 
                 <div class="down">
                     <div class="where">
-                        <text class="data">09/11</text>
+                        <text class="data" style="color: black;">09/11</text>
                         <img src="bode.png">
                     </div>
 
@@ -1387,6 +1380,19 @@ function redirecio(){
     window.location.href = "https://forms.microsoft.com/r/N53WajSj5m";
 
 }
+function redirecionalkd(){
+    
+    window.location.href = "https://www.linkedin.com/company/iniciativa-startup-experience/posts/?feedView=all";
+
+}
+
+function redirecionainsta(){
+    
+    window.location.href = "https://www.instagram.com/cptufpr/";
+
+}
+
+
 function esconderDiv(event) {
             // Oculta a div "maisinfos" apenas se o clique for na div "bgL"
             var div = document.getElementById('maisinfos');
