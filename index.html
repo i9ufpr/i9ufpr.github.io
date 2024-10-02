@@ -1035,6 +1035,117 @@ Media Queries
 
 
 
+
+/*
+CHATBOT
+
+*/
+#chat-container {
+    font-family: Arial, sans-serif;
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+
+
+          
+         margin: 50px auto;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        #logo {
+            background-color: #038D42;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        #messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .user-message {
+            background-color: #e1ffc7;
+            align-self: flex-end;
+        }
+        .bot-message {
+            background-color: #f1f1f1;
+            align-self: flex-start;
+        }
+        #input-container {
+            display: flex;
+        }
+        #input-container input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+        #input-container button {
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        #input-container button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes dots {
+            0%, 20% {
+                color: rgba(0,0,0,0);
+                text-shadow:
+                    .25em 0 0 rgba(0,0,0,0),
+                    .5em 0 0 rgba(0,0,0,0);
+            }
+            40% {
+                color: black;
+                text-shadow:
+                    .25em 0 0 rgba(0,0,0,0),
+                    .5em 0 0 rgba(0,0,0,0);
+            }
+            60% {
+                text-shadow:
+                    .25em 0 0 black,
+                    .5em 0 0 rgba(0,0,0,0);
+            }
+            80%, 100% {
+                text-shadow:
+                    .25em 0 0 black,
+                    .5em 0 0 black;
+            }
+        }
+        .dots::after {
+            content: ' .';
+            animation: dots 1s steps(5, end) infinite;
+        }
+        .btnchatbot{
+            position: fixed;
+            background-color: rgb(40, 163, 71);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            top: 500px;
+            width: 190px;
+            z-index: 10;
+            left: 78%;
+            border: 1px solid white;
+            cursor: pointer;    
+        }
+
 </style>
 
 
@@ -1082,9 +1193,28 @@ Media Queries
             
         </div>
      </div>
+
+
+     <div id="chatbotdiv" class="bgL" onclick="esconderDiv2()">
+
+     <div id='chat-container'  onclick="event.stopPropagation()">
+        <div id='logo'>ChatBot CPT</div>
+        <div id='messages'></div>
+        <div id='input-container'>
+            <input type='text' id='user-input' placeholder='Digite sua mensagem...'>
+            <button onclick='sendMessage()'>Enviar</button>
+        </div>
+    </div></div>
+    
      
 
 
+
+     
+
+    <div class="btnchatbot" onclick="abrirmodalchatbot()">
+        Chatbot interativo!
+     </div>
 
 
 
@@ -1401,6 +1531,16 @@ function esconderDiv(event) {
             var div = document.getElementById('maisinfos');
             div.style.display = 'none';
         }
+        
+
+        function esconderDiv2(event) {
+            // Oculta a div "maisinfos" apenas se o clique for na div "bgL"
+            var div = document.getElementById('chatbotdiv');
+            div.style.display = 'none';
+        }
+        
+
+
 let total = 0;
 
 function prox() {
@@ -1443,6 +1583,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         aux = !aux;
     });
 });
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const scrollingWrapper = document.querySelector('.scrolling-wrapper');
@@ -1538,6 +1681,228 @@ voltar.addEventListener('click', function(){
         video.style.opacity = 1;
     }, 1000); 
 })
+
+
+
+
+
+
+
+
+
+function abrirmodalchatbot(){
+    var chatbot = document.getElementById('chatbotdiv');
+    chatbot.style.display = 'initial'
+}
+
+function sendMessage() {
+        const userInput = document.getElementById('user-input');
+        const message = userInput.value.trim();
+        if (message) {
+            appendMessage(message, 'user');
+            userInput.value = '';
+            getBotResponse(message);
+        }
+    }
+
+
+    function appendMessage(message, sender) {
+        const messageContainer = document.getElementById('messages');
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+        messageElement.textContent = message;
+        messageContainer.appendChild(messageElement);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+
+    async function getBotResponse(userMessage) {
+        const messageContainer = document.getElementById('messages');
+        const typingIndicator = document.createElement('div');
+        typingIndicator.classList.add('message', 'bot-message', 'dots');
+        typingIndicator.textContent = 'Bot está digitando';
+        messageContainer.appendChild(typingIndicator);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+
+        try {
+            
+            const response = await api(userMessage)
+
+            const botMessage = response
+
+           
+
+            if (messageContainer.contains(typingIndicator)) {
+                messageContainer.removeChild(typingIndicator);
+            }
+
+            console.log(typeof(botMessage))
+            console.log(botMessage)
+      
+      
+                appendMessage(botMessage, 'bot');
+            
+
+        } catch (error) {
+            console.error('Erro ao obter resposta do bot:', error);
+            if (messageContainer.contains(typingIndicator)) {
+                messageContainer.removeChild(typingIndicator);
+            }
+            appendMessage('Erro ao se comunicar com o servidor.', 'bot');
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+async function api(texto) {
+    const apiKey = 'sk-proj-rpI9HLfa1AzUCWkBroq0T3BlbkFJYSuXjvQZXo2RUQg5KCdq'; // Substitua com sua chave de API
+
+    let historico = [];
+    let minhavari = ` ${padrao}. Prompt do usuário:  ${texto}`;
+    historico.push({ role: 'user', content: minhavari });
+
+    let respostaCompleta = [];
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',  // ou 'gpt-4' se preferir
+            messages: historico,
+            stream: true,  // Para ativar o streaming de respostas
+        }),
+    });
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder("utf-8");
+    
+    while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+
+        // Divida os chunks por novas linhas, já que o servidor envia "data: {JSON}\n"
+        const lines = chunk.split('\n');
+
+        for (let line of lines) {
+            // Ignore as linhas que não começam com 'data:'
+            if (!line.startsWith('data:')) continue;
+
+            const json = line.replace(/^data: /, ''); // Remova o prefixo "data: "
+            if (json === '[DONE]') break;  // Fim do stream
+
+            try {
+                const parsedChunk = JSON.parse(json);  // Parse JSON válido
+
+                if (parsedChunk.choices && parsedChunk.choices[0].delta.content) {
+                    respostaCompleta.push(parsedChunk.choices[0].delta.content);
+                }
+            } catch (error) {
+                console.error("Erro ao processar o chunk JSON:", error);
+            }
+        }
+    }
+
+    // Junte todas as partes da resposta em uma única string
+    const respostaFinal = respostaCompleta.join('');
+    historico.push({ role: 'assistant', content: respostaFinal });
+
+    // Retorne a resposta final e o histórico
+    return  respostaFinal ; 
+}
+
+
+
+
+
+var padrao = `Instruções
+
+Contexto: Você é um assistente virtual amigável e interativo, projetado para auxiliar os alunos da Universidade Federal do Paraná (UFPR) na elaboração de pitches para o Pitch Day UFPR. Os pitches são apresentados em formato de banner e incluem campos específicos que precisam ser preenchidos de forma eficaz.
+
+Sua Função:
+
+Orientação Personalizada: Inicie fazendo perguntas para compreender o projeto do aluno, como o tipo de curso (TCC, Iniciação Científica, Pós-Graduação, disciplina de graduação ou extensão) e a área de estudo.
+Explicações Claras: Explique detalhadamente o que deve ser preenchido em cada campo do pitch, adaptando a linguagem ao nível de conhecimento do aluno.
+Feedback Construtivo: Forneça feedback sobre o conteúdo apresentado, apontando pontos fortes e sugerindo melhorias de forma encorajadora.
+Exemplos Práticos: Ofereça exemplos ou cenários que ajudem o aluno a entender como aplicar as orientações.
+Dicas e Estratégias: Sugira estratégias para melhorar o pitch, incluindo técnicas de apresentação e melhores práticas de design.
+Referência ao Manual: Utilize informações do MANUAL DE PREENCHIMENTO DE PITCH.PDF para fundamentar suas orientações e incentive o aluno a consultá-lo para mais detalhes.
+Desenvolvimento de Soft Skills: Incentive o aluno a desenvolver habilidades como comunicação, trabalho em equipe e pensamento crítico, destacando a importância dessas competências para o sucesso no Pitch Day e na carreira profissional.
+Campos do Pitch e Orientações Específicas:
+
+Logo ou Marca + Nome da Startup:
+
+Orientação: Pergunte se o aluno já possui um nome ou logo. Caso não tenha, sugira brainstormings e explique a importância de um nome que reflita a essência do projeto.
+Dicas de Design: Forneça orientações básicas sobre design de logos, como simplicidade e relevância, conforme o manual.
+Problemas | Oportunidades:
+
+Orientação: Ajude o aluno a identificar e descrever claramente o problema que a startup pretende resolver.
+Enfatize: A importância de quantificar o impacto e o custo do problema para a sociedade.
+Solução | Ideia:
+
+Orientação: Incentive o aluno a apresentar a solução de forma clara, destacando a inovação e os diferenciais.
+Perguntas Guia: "Como sua solução aborda o problema identificado?" "O que torna sua ideia única?"
+Tamanho do Mercado | Potencial:
+
+Orientação: Explique como pesquisar o tamanho do mercado e a importância de demonstrar potencial de crescimento.
+Sugestões: Indique fontes confiáveis para obter dados de mercado.
+Modelo de Negócios | Monetização:
+
+Orientação: Ajude o aluno a definir como a startup gerará receita.
+Exemplos: Forneça exemplos de modelos de negócios relevantes ao projeto.
+Concorrência:
+
+Orientação: Explique como realizar uma análise da concorrência.
+Destaque: A importância de identificar os diferenciais competitivos.
+Financiamento:
+
+Orientação: Oriente sobre como apresentar as necessidades financeiras e o plano de investimento.
+Enfatize: Mostrar o impacto positivo e o retorno esperado para investidores.
+Equipe | Parcerias | Apoio:
+
+Orientação: Ajude o aluno a destacar as habilidades e experiências da equipe.
+Sugestões: Incentive a mencionar parcerias estratégicas e apoios recebidos.
+Estágio de Tração:
+
+Orientação: Explique as 7 categorias de estágio de tração disponíveis.
+Ajuda na Escolha: Auxilie o aluno a identificar em qual estágio seu projeto se encontra.
+Contato:
+
+Orientação: Reforce a importância de fornecer informações de contato claras e profissionais.
+Dicas: Sugira incluir e-mail, telefone e links para redes sociais ou site do projeto.
+Limitações da IA:
+
+Se solicitado a criar conteúdo diretamente, responda educadamente:
+
+"Minha função é orientá-lo na elaboração do seu pitch. Posso ajudá-lo explicando como preencher cada seção e oferecendo sugestões para aprimorar seu trabalho."
+
+Tom e Engajamento:
+
+Mantenha uma linguagem amigável e motivadora.
+Elogie os esforços e conquistas do aluno, incentivando a continuidade do trabalho.
+Destaque a relevância do Pitch Day UFPR para o desenvolvimento profissional e pessoal do aluno.
+Formato e Sugestões:
+
+Ao fornecer sugestões ou solicitar que o aluno desenvolva uma parte do pitch, conclua com:
+
+"Com base nas minhas orientações, elabore um texto adequado ao espaço do formulário, utilizando a fonte Calibri, tamanho 12 e espaçamento simples."
+
+Nota Importante:
+
+Sua função é ser um guia e mentor virtual, capacitando o aluno a desenvolver seu próprio conteúdo.
+Não crie o conteúdo diretamente para o aluno, mas sim forneça as ferramentas e orientações necessárias para que ele o faça com confiança.`
+
+
 
     </script>
 
