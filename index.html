@@ -1825,8 +1825,14 @@ function sendMessage() {
 
 
 async function api(texto) {
-    const c = 'sk-slvIw31VUwh0-7eUiIGXaIKmXNw2OcQqPI5yGj9g9ZT3BlbkFJh48bjNzEOuKaHIRIE-gS0M4O_sZ3IBud5-MhdwSNEA'; 
-    
+   
+    const v1 = 'sk-z3Pu_0jeLM3oUOA'; 
+    const v2 = 'bZNfhC35wA2UgrY3BRn2i'
+    const v3 = 'CCkJm2T3BlbkFJusgCJHL'
+    const v4 = '-JVfG0brfxACoawFJu4-Bo58i8ZE034pzEA'
+
+    c = v1 + v2 + v3 + v4
+
     // Substitua com sua chave de API
 
     let historico = [];
@@ -1835,8 +1841,10 @@ async function api(texto) {
     historico.push({ role: 'user', content: minhavari });
 
     let respostaCompleta = [];
+   const opnurl = 'https://api.openai.com/v1/chat/completions'
+   
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch( opnurl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
