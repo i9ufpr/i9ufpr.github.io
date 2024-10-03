@@ -1057,7 +1057,10 @@ CHATBOT
          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
         #logo {
-            background-color: #038D42;
+            background-color:   #F39939;
+
+          
+/*  */
             color: white;
             padding: 15px;
             text-align: center;
@@ -1132,20 +1135,78 @@ CHATBOT
         }
         .btnchatbot{
             position: fixed;
-            background-color: rgb(40, 163, 71);
+            background-color: #3297A9;
             padding: 20px;
             border-radius: 10px;
             color: white;
             text-align: center;
             font-family: Arial, sans-serif;
             top: 500px;
-            width: 190px;
+            width: 290px;
             z-index: 10;
-            left: 78%;
+            left: 70%;
             border: 1px solid white;
+            animation: moveUpDown 1s ease-in-out infinite;  
             cursor: pointer;    
         }
+        @media only screen and (max-width: 768px) {
+  .logo2{
+    color: #058BA2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 82.331%;
+  }
 
+  .cima {
+        height: auto; 
+        top: 0;
+        right: 5px;
+        z-index: 5;
+        font-size: 1em;
+        line-height: normal;
+        padding: 5px; 
+        margin: 0; 
+        bottom: 0;
+        margin-top: 20px;
+    }
+    #botaoSobre text {
+        font-size: 14px;
+    }
+    #passada text{
+        font-size: 14px;
+    }
+    .seta{
+    background-color: black;
+    border-radius: 15px;
+    width: 18%; 
+    }
+    .seta img{
+        padding-left: 0%;
+        margin-left: -2px;
+    }
+
+    #skills .col-3 {
+    flex: 1 1 100%;
+    margin: 5px 0; 
+    }
+}
+
+
+
+
+#skills .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+}
+
+#skills .col-3 {
+  flex: 1 1 calc(33.33% - 20px); 
+  margin: 10px;
+  box-sizing: border-box; 
+}
 </style>
 
 
@@ -1198,7 +1259,8 @@ CHATBOT
      <div id="chatbotdiv" class="bgL" onclick="esconderDiv2()">
 
      <div id='chat-container'  onclick="event.stopPropagation()">
-        <div id='logo'>ChatBot CPT</div>
+        <div id='logo'> PITCH DAY CHAT BOT</div>
+
         <div id='messages'></div>
         <div id='input-container'>
             <input type='text' id='user-input' placeholder='Digite sua mensagem...'>
@@ -1213,7 +1275,7 @@ CHATBOT
      
 
     <div class="btnchatbot" onclick="abrirmodalchatbot()">
-        Chatbot interativo!
+         Converse com o nosso Chatbot interativo!
      </div>
 
 
@@ -1595,7 +1657,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const imgWidth = scrollingWrapper.querySelector('img').offsetWidth;
     const margin = parseInt(window.getComputedStyle(scrollingWrapper.querySelector('img')).marginRight);
 
-    const scrollAmount = imgWidth + margin; // rolagem para uma imagem
+    const scrollAmount = imgWidth + margin; 
 
     setaEsquerda.addEventListener('click', () => {
         scrollingWrapper.scrollBy({
@@ -1688,11 +1750,13 @@ voltar.addEventListener('click', function(){
 
 
 
-
+var inicial = `Olá! Seja bem-vindo ao assistente virtual para o Pitch Day UFPR. Como posso ajudá-lo hoje? Você está precisando de orientações para elaborar o seu pitch? Vamos começar entendendo um pouco mais sobre o seu projeto. Qual é o tipo de curso e área de estudo do seu projeto? Vamos trabalhar juntos para fazer o seu pitch se destacar!`
 
 function abrirmodalchatbot(){
     var chatbot = document.getElementById('chatbotdiv');
     chatbot.style.display = 'initial'
+
+    appendMessage(inicial, 'bot-message');
 }
 
 function sendMessage() {
@@ -1761,10 +1825,13 @@ function sendMessage() {
 
 
 async function api(texto) {
-    const apiKey = 'sk-proj-rpI9HLfa1AzUCWkBroq0T3BlbkFJYSuXjvQZXo2RUQg5KCdq'; // Substitua com sua chave de API
+    const c = 'sk-slvIw31VUwh0-7eUiIGXaIKmXNw2OcQqPI5yGj9g9ZT3BlbkFJh48bjNzEOuKaHIRIE-gS0M4O_sZ3IBud5-MhdwSNEA'; 
+    
+    // Substitua com sua chave de API
 
     let historico = [];
-    let minhavari = ` ${padrao}. Prompt do usuário:  ${texto}`;
+    //  
+    let minhavari = `${padrao}. Prompt do usuário:  ${texto}`;
     historico.push({ role: 'user', content: minhavari });
 
     let respostaCompleta = [];
@@ -1773,7 +1840,7 @@ async function api(texto) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
+            'Authorization': `Bearer ${c}`,
         },
         body: JSON.stringify({
             model: 'gpt-3.5-turbo',  // ou 'gpt-4' se preferir
