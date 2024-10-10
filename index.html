@@ -51,7 +51,9 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #000000;
 }
+
 
 .infos{
     display: flex;
@@ -60,6 +62,7 @@ html, body {
     width: 20%;
     height: 100%;
     box-sizing: border-box;
+    border-color: #de4e0b;
 }
 
 .logo{
@@ -96,7 +99,7 @@ html, body {
     align-items: center;
     text-align: start;
     border-radius: 30px;
-    border: 1px solid #FFF;
+    border: 2px solid #de4e0b;
     background: rgba(165, 165, 165, 0.30);
     box-shadow: 4px 4px 17.9px 0px rgba(0, 0, 0, 0.04);
 }
@@ -974,9 +977,13 @@ Media Queries
     margin: 2em 5% 0 0;
     padding: 0 1em;
     width: 30%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  animation: moveUpDown 1s ease-in-out infinite;
-  }
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.features .col-3:hover {
+    transform: scale(1.05); /* Aumenta a escala da div ao passar o mouse */
+}
   
   .features .col-3:last-of-type {
     margin-right: 0;
@@ -1019,7 +1026,27 @@ Media Queries
 }
 
 
+.torn-paper-background {
+    position: relative;
+    background-color: black; /* Cor de fundo do "papel" */
+    padding: 20px;
+    border: 1px solid #ccc; /* Borda para simular a borda do papel */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Para ocultar o excesso */
+}
 
+.torn-paper-background::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Ajuste para a posição do rasgado */
+    left: -20px; /* Ajuste para a posição do rasgado */
+    right: -20px; /* Ajuste para a posição do rasgado */
+    bottom: -20px; /* Ajuste para a posição do rasgado */
+    background: linear-gradient(to right, transparent 30%, gray 30%, gray 70%, transparent 70%);
+    z-index: -1; /* Para ficar atrás do conteúdo */
+    border-radius: 10px; /* Bordas arredondadas */
+}
 
 
 @keyframes moveUpDown {
@@ -1319,7 +1346,7 @@ CHATBOT
                     </div>
                 </div>
                 <div class="cima">
-                    <text id="dias">Faltam 5 dias</text>
+                    <text id="dias" >Faltam 5 dias</text>
                     <img src="Charging Battery.png">
                 </div>
             </div>
@@ -1350,31 +1377,21 @@ CHATBOT
                     </div>
                      
 
-                    <div class="empresas borda2">
-                        <img class="setap setap1" src="seta.png" alt="Seta Esquerda">
-                        <div class="scrolling-wrapper">
-                            <img src="instaufpr 2.png" alt="Logo">
-                            <img src="instaufpr 2.png" alt="Logo">
-                            <img src="instaufpr 2.png" alt="Logo">
-                            <img src="instaufpr 2.png" alt="Logo">
-                            <img src="instaufpr 2.png" alt="Logo">
-                        </div>
-                        <img class="setap setap2" src="seta.png" alt="Seta Direita">
-                    </div>
-
+                   
 
 
                 </div>
 
                 <div class="middle">
                     <div class="sobre" id="sobre" style="opacity: 0; background-color: #3297A9; padding: 10px; border-radius: 10px;">
-                        <text >"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat
-                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</text>
+                        <text >
+
+
+                            O Pitch Day UFPR é um evento no qual os alunos apresentam seus projetos em formato de banner para uma banca avaliadora. Durante o evento, é essencial preencher cada seção do pitch de forma eficaz, incluindo nome da startup, problemas a serem resolvidos, solução inovadora, tamanho do mercado, modelo de negócios, concorrência, financiamento, equipe, estágio de tração e informações de contato. É uma oportunidade para desenvolver habilidades de comunicação, trabalho em equipe e pensamento crítico, além de apresentar ideias criativas e inovadoras.
+
+
+
+                        </text>
 
                             <div class="entenda" onclick="abrirmodal()">ENTENDA TUDO!</div>
                     </div>
@@ -1491,40 +1508,42 @@ CHATBOT
     </div>
   </div>
   
-  <div class="container-fluid intro" id="about">
-    <div class="container">
+  <div class="container-fluid intro" id="about" style="background: rgb(0, 0, 0);
+  background: linear-gradient(360deg, rgba(0, 0, 0, 1) 9%, #d37d21 52%, #F39939 75%);
+color: #fff;">
+    <div class="container"  style=" " >
       <h2>SOBRE O EVENTO</h2>
       <p>
         O Pitch Day é um evento promovido pelo grupo i9 UFPR, destinado à apresentação de startups desenvolvidas por alunos do setor de tecnologia da Universidade Federal do Paraná (campus Curitiba). Durante o evento, os estudantes têm a oportunidade de apresentar ideias de negócios que consideraram relevantes ao longo de seus estudos de graduação. Com o apoio do professor André Mariano e dos participantes do projeto Iniciativa Start Up Experience, esses alunos foram orientados e capacitados para criar microempresas, competindo por espaço e reconhecimento. </p>
     </div>
   </div>
   
-  <div class="container-fluid features" id="skills">
-    <h2>Organizadores</h2>
-    <div class="container cf" style="display: flex;">
+  <div class="container-fluid features" id="skills" style="background-image: url('fundo.png'); background-color: #000; padding-top: 30px; padding-bottom: 30px;">
+    <h2 style="color: #fffdfd; margin: 0 auto; font-size: 30px;">Organizadores</h2>
+    <div class="container cf" style="display: flex; ">
       
-      <div class="col-3">
-        <img src="pit.webp" alt="">
-        <h3>Pitch Day</h3>
-        <p>Setor de tecnologia (icone roxo com um losango) 
+      <div class="col-3" style="background-color: rgba(252, 243, 243, 0.733); border-radius: 20px;  border: 2px solid #058aa2;">
+        <img src="pit.webp" alt="" style="padding-top: 20px;">
+        <h3 style="color: #000; font-weight: bold;">Pitch Day</h3>
+        <p style="color: #000;">Setor de tecnologia (icone roxo com um losango) 
             Inclui os projetos necessários para a idealização e execução do evento, além da capacitação dos alunos de graduação que estão participando e apresentando suas startups. </p>
       </div>
-      <div class="col-3">
-        <img src="start.webp" alt="">
-        <h3>Iniciativa Startup Experience</h3>
-        <p> Projeto de inovação do setor, voltado para a capacitação e orientação no desenvolvimento de startups de tecnologia inovadora. 
+      <div class="col-3" style="background-color: rgba(252, 243, 243, 0.733); border-radius: 20px;  border: 2px solid #058aa2;">
+        <img src="start.webp" alt=""  style="padding-top: 20px;">
+        <h3 style="color: #000;font-weight: bold;">Iniciativa Startup Experience</h3>
+        <p style="color: #000;"> Projeto de inovação do setor, voltado para a capacitação e orientação no desenvolvimento de startups de tecnologia inovadora. 
         </p>
       </div>
-      <div class="col-3">
-        <img src="cpt.webp" alt="">
-        <h3>CPT</h3>
-        <p>Projeto de extensão que concebeu e forneceu a estrutura organizacional necessária para a realização deste evento.</p>
+      <div class="col-3" style="background-color: rgba(252, 243, 243, 0.733); border-radius: 20px;  border: 2px solid #058aa2;">
+        <img src="cpt.webp" alt=""  style="padding-top: 20px;">
+        <h3 style="color: #000;font-weight: bold;">CPT</h3>
+        <p style="color: #000;">Projeto de extensão que concebeu e forneceu a estrutura organizacional necessária para a realização deste evento.</p>
       </div>
     </div>
   </div>
   
-  <div class="container-fluid portfolio" id="portfolio">
-    <div class="container cf">
+  <div class="container-fluid portfolio" id="portfolio" style="background-image: url('fundo.png'); background-color: #000;">
+    <div class="container cf" style="background-image: url('fundo.png'); background-color: #000;">
       <h2>Sobre o evento</h2>
       <div class="gallery">
 
@@ -1544,16 +1563,20 @@ CHATBOT
   
 
 
-  <div class="container-fluid contact" id="contact" style="margin-top: 300px;" >
+  <div class="container-fluid contact" id="contact" style="padding-top:300px; background-image: url('fundo.png'); background-color: #000;" >
     <div class="container" >
-      <form style="margin-top: 100px;">
-        <h2>Se interessou? entre em contato com a gente!</h2>
-        <input type="text" placeholder="Name" id="name" name="name" class="full-half">
-        <input type="email" placeholder="Email" id="email" name="email" class="full-half">
-        <input type="text" placeholder="Subject" id="subject" name="subject">
-        <textarea placeholder="Message" id="message" name="message"></textarea>
-        <input type="submit" value="Enviar" style="cursor: pointer;">
-      </form>
+        <div class="container-fluid intro" id="about" style=" border-radius: 20px; background: rgb(0, 0, 0);
+        background: linear-gradient(360deg, rgba(0, 0, 0, 1) 9%, #d37d21 52%, #F39939 75%);
+      color: #fff;">
+          <div class="container"  style=" margin-top: 250px; " >
+            <h2>CONFIRA O EVENTO PASSADO</h2>
+            
+                <video  width="600" height="360" controls>
+                    <source src="videoevento.mp4" type="video/mp4">
+                </video>
+
+          </div>
+        </div>
     </div>
   </div>
 
@@ -1599,13 +1622,13 @@ function redirecio(){
 }
 function redirecionalkd(){
     
-    window.location.href = "https://www.linkedin.com/company/iniciativa-startup-experience/posts/?feedView=all";
+    window.location.href = "www.linkedin.com/showcase/pitchdayufpr";
 
 }
 
 function redirecionainsta(){
     
-    window.location.href = "https://www.instagram.com/cptufpr/";
+    window.location.href = "www.instagram.com/pitchday.ufpr";
 
 }
 
@@ -1772,7 +1795,7 @@ voltar.addEventListener('click', function(){
 
 
 
-var inicial = `Olá! Seja bem-vindo ao assistente virtual para o Pitch Day UFPR. Como posso ajudá-lo hoje? Você está precisando de orientações para elaborar o seu pitch? Vamos começar entendendo um pouco mais sobre o seu projeto. Qual é o tipo de curso e área de estudo do seu projeto? Vamos trabalhar juntos para fazer o seu pitch se destacar!`
+var inicial = `Olá! Seja bem-vindo ao assistente virtual para o Pitch Day UFPR. Como posso ajudá-lo hoje? Você está precisando de orientações para elaborar o seu pitch? Vamos começar entendendo um pouco mais sobre o seu projeto. Qual é o tipo de curso e área de estudo do seu projeto? Vamos trabalhar juntos para fazer o seu pitch se destacar! Comece dando uma olhada no manual: https://drive.google.com/file/d/15T_LPaicz6o6rDPP-s9wiJ_HtWos9HjO/view`
 
 function abrirmodalchatbot(){
     var chatbot = document.getElementById('chatbotdiv');
